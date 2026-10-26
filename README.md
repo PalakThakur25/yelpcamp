@@ -1,16 +1,64 @@
-Currently building YelpCamp, a campground review web app. 🚧🏕️
+# YelpCamp 🏕️
 
-So far I've built:
-✅ User registration and login
-✅ Add, edit and delete campgrounds
-✅ Image support for each campground
-✅ Owner-only permissions for editing and deleting
-🔜 Next: reviews, ratings and maps
+A campground review web app built with Node.js, Express and MongoDB.
 
-Tech: Node.js, Express, MongoDB, EJS
+> 🚧 **Work in progress.** More features are coming soon.
 
-Repo (work in progress): https://github.com/PalakThakur25/yelpcamp
+## Features
 
-Would love your feedback! 🙌
+- User registration and login (Passport.js)
+- Add, view, edit and delete campgrounds
+- Campground images
+- Only the owner can edit or delete their campground
+- Flash messages for feedback
+- Seed scripts to fill the database with sample campgrounds
 
-#WebDevelopment #NodeJS #ExpressJS #MongoDB #BuildInPublic #LearningInPublic
+## Coming Soon
+
+- Reviews and ratings
+- Maps
+- Search
+
+## Tech Stack
+
+- Node.js
+- Express
+- MongoDB and Mongoose
+- EJS templates
+- Passport (authentication)
+
+## How to Run Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/PalakThakur25/yelpcamp.git
+cd yelpcamp
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Make sure MongoDB is running locally.
+
+4. (Optional) Seed the database:
+
+```bash
+node seeds.js
+```
+
+5. Start the app:
+
+```bash
+node app.js
+```
+
+6. Open http://localhost:3000 in your browser.
+
+## Author
+
+**Palak Thakur**
+GitHub: [PalakThakur25](https://github.com/PalakThakur25)

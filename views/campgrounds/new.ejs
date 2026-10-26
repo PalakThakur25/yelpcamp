@@ -1,0 +1,36 @@
+<% layout('boilerplate') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Campground | YelpCamp</title>
+</head>
+<body>
+    <h1>Add a Campground</h1>
+    <a href="/campgrounds">Back to Campgrounds</a>
+
+    <form action="/campgrounds" method="POST">
+        <p>
+            <label>Title</label><br>
+            <input name="campground[title]" required>
+        </p>
+        <p>
+            <label>Location</label><br>
+            <input name="campground[location]" required>
+        </p>
+        <p>
+            <label>Price per night</label><br>
+            <input type="number" name="campground[price]" min="0" required>
+        </p>
+        <p>
+            <label>Image URL</label><br>
+            <input type="url" name="campground[image]">
+        </p>
+        <p>
+            <label>Description</label><br>
+            <textarea name="campground[description]" required></textarea>
+        </p>
+        <button type="submit">Create Campground</button>
+    </form>
+</body>
+</html>

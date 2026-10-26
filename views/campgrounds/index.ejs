@@ -1,0 +1,106 @@
+<% layout('boilerplate') %>
+
+<style>
+    .campground-card {
+        max-width: 420px;
+        margin: 0 auto;
+        border: none;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+        transition: transform 0.25s ease;
+    }
+
+    .campground-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .campground-image {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .campground-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .campground-location {
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+
+    .campground-price {
+        color: #198754;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    .campground-btn {
+        border-radius: 9px;
+        padding: 9px 16px;
+    }
+</style>
+
+<div class="container py-4">
+
+    <h1 class="text-center fw-bold mb-2">
+        Explore Campgrounds
+    </h1>
+
+    <p class="text-center text-muted mb-5">
+        Find your perfect escape into nature.
+    </p>
+
+    <% for (let campground of campgrounds) { %>
+
+        <div class="card campground-card mb-4">
+
+            <% if (campground.image) { %>
+                <img
+                    src="<%= campground.image %>"
+                    class="campground-image"
+                    alt="<%= campground.title %>"
+                >
+            <% } else { %>
+                <div class="campground-image bg-light d-flex align-items-center justify-content-center">
+                    <span class="text-muted">
+                        No image available
+                    </span>
+                </div>
+            <% } %>
+
+            <div class="card-body p-4">
+
+                <h5 class="campground-title mb-2">
+                    <%= campground.title %>
+                </h5>
+
+                <p class="campground-location mb-3">
+                    📍 <%= campground.location %>
+                </p>
+
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+                    <p class="campground-price mb-0">
+                        ₹<%= campground.price %>
+                        <span class="text-muted fw-normal fs-6">
+                            / night
+                        </span>
+                    </p>
+
+                    <a
+                        href="/campgrounds/<%= campground._id %>"
+                        class="btn btn-primary campground-btn"
+                    >
+                        View Details →
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    <% } %>
+
+</div>
